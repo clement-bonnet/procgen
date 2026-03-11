@@ -293,7 +293,6 @@ class ChaserGame : public BasicAbstractGame {
     void game_step() override {
         BasicAbstractGame::game_step();
 
-        int num_orbs = 0;
         int num_enemies = 0;
 
         float default_enemy_speed = .5;
@@ -303,7 +302,7 @@ class ChaserGame : public BasicAbstractGame {
             auto ent = entities[j];
 
             if (ent->type == ORB) {
-                num_orbs++;
+                (void)0;  // orb handling reserved
             } else if (ent->type == ENEMY_EGG) {
                 num_enemies++;
                 ent->health -= 1;
